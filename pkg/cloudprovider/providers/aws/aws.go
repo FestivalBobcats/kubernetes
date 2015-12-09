@@ -784,6 +784,9 @@ func (self *awsInstanceType) getEBSMountDevices() []string {
 	devices := []string{}
 	for c := 'f'; c <= 'p'; c++ {
 		devices = append(devices, fmt.Sprintf("%c", c))
+		for i := 1; i <= 9; i++ {
+			devices = append(devices, fmt.Sprintf("%c%d", c, i))
+		}
 	}
 	return devices
 }
